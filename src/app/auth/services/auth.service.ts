@@ -26,8 +26,8 @@ export class AuthService {
 
   async init() {
     const token = localStorage.getItem(this.TOKEN_KEY)
-    const session = this.api.getSession(token) as Session;
-    this.session.next(session);
+    // const session = this.api.getSession(token) as Session;
+    // this.session.next(session);
   }
 
   async login(login: string, password: string) {
