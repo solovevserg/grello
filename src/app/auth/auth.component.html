@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Grello</mat-card-title>
+        <mat-card-subtitle>Авторизация</mat-card-subtitle>
+    </mat-card-header>
+    
+    <!-- <div [formControl]="loginForm"> -->
+        <mat-form-field>
+            <input matInput type="text" [formControl]="loginForm.controls.login">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="password" [formControl]="loginForm.controls.password">
+            <!-- <mat-error></mat-error> -->
+        </mat-form-field>
+        <span>
+            {{loginForm.errors | json}}
+        </span>
+    <!-- </div> -->
+
+    <div>
+        {{loginForm.value | json}}
+    </div>
+
+    <mat-card-actions>
+        <button (click)="clear()">Очистить</button>
+        <button (click)="login()" [disabled]="loginForm.invalid">Войти</button>
+    </mat-card-actions>
+
+</mat-card>
